@@ -3,6 +3,7 @@ import HeroContent from "@/components/HeroContent"
 import PulsingCircle from "@/components/PulsingCircle"
 import Header from "@/components/Header"
 import TeaCards from "@/components/TeaCards"
+import Reviews from "@/components/Reviews"
 
 const Index = () => {
   return (
@@ -13,6 +14,7 @@ const Index = () => {
         <PulsingCircle />
       </div>
       <TeaCards />
+      <Reviews />
     </ShaderBackground>
   )
 }
