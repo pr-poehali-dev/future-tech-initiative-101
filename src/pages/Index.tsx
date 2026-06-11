@@ -4,6 +4,7 @@ import PulsingCircle from "@/components/PulsingCircle"
 import Header from "@/components/Header"
 import TeaCards from "@/components/TeaCards"
 import Reviews from "@/components/Reviews"
+import Footer from "@/components/Footer"
 
 const Index = () => {
   return (
@@ -15,6 +16,7 @@ const Index = () => {
       </div>
       <TeaCards />
       <Reviews />
+      <Footer />
     </ShaderBackground>
   )
 }
