@@ -6,6 +6,7 @@ import TeaCards from "@/components/TeaCards"
 import Reviews from "@/components/Reviews"
 import Footer from "@/components/Footer"
 import Featured from "@/components/Featured"
+import TeaInvite from "@/components/TeaInvite"
 
 const Index = () => {
   return (
@@ -17,6 +18,7 @@ const Index = () => {
       </div>
       <TeaCards />
       <Featured />
+      <TeaInvite />
       <Reviews />
       <Footer />
     </ShaderBackground>
