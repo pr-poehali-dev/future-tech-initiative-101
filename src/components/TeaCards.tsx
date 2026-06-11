@@ -1,4 +1,6 @@
+import { useState } from "react"
 import Icon from "@/components/ui/icon"
+import OrderModal from "@/components/OrderModal"
 
 const teas = [
   {
@@ -40,6 +42,8 @@ const teas = [
 ]
 
 export default function TeaCards() {
+  const [selectedTea, setSelectedTea] = useState<string | null>(null)
+
   return (
     <section id="catalog" className="relative z-20 px-8 py-20">
       <div className="max-w-6xl mx-auto">
@@ -75,7 +79,10 @@ export default function TeaCards() {
 
               <p className="text-white/60 text-xs leading-relaxed flex-1">{tea.description}</p>
 
-              <button className="w-full py-2 rounded-full border border-white/20 text-white/70 text-xs hover:bg-white/10 hover:text-white hover:border-white/40 transition-all duration-200 flex items-center justify-center gap-2 group-hover:border-white/30">
+              <button
+                onClick={() => setSelectedTea(tea.name)}
+                className="w-full py-2 rounded-full border border-white/20 text-white/70 text-xs hover:bg-white/10 hover:text-white hover:border-white/40 transition-all duration-200 flex items-center justify-center gap-2 group-hover:border-white/30"
+              >
                 Заказать
                 <Icon name="ArrowRight" size={12} />
               </button>
@@ -83,6 +90,8 @@ export default function TeaCards() {
           ))}
         </div>
       </div>
+
+      <OrderModal teaName={selectedTea} onClose={() => setSelectedTea(null)} />
     </section>
   )
 }
