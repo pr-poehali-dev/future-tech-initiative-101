@@ -93,23 +93,45 @@ const teas = [
   },
 ]
 
+const FILTERS = ["Все", "Улун", "Зелёный", "Белый", "Чёрный", "Пуэр"]
+
 export default function TeaCards() {
   const [selectedTea, setSelectedTea] = useState<string | null>(null)
+  const [activeFilter, setActiveFilter] = useState("Все")
+
+  const filtered = activeFilter === "Все" ? teas : teas.filter((t) => t.type === activeFilter)
 
   return (
     <section id="catalog" className="relative z-20 px-8 py-20">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-12">
+        <div className="mb-10">
           <p className="text-white/50 text-xs uppercase tracking-widest mb-2">Каталог</p>
           <h2 className="text-4xl md:text-5xl font-light text-white tracking-tight">
             <span className="font-medium italic">Избранные</span> сорта
           </h2>
         </div>
 
+        <div className="flex flex-wrap gap-2 mb-8">
+          {FILTERS.map((f) => (
+            <button
+              key={f}
+              onClick={() => setActiveFilter(f)}
+              className={`px-4 py-1.5 rounded-full text-xs transition-all duration-200 border ${
+                activeFilter === f
+                  ? "bg-white text-black border-white"
+                  : "border-white/20 text-white/60 hover:border-white/40 hover:text-white"
+              }`}
+            >
+              {f}
+            </button>
+          ))}
+        </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4">
-          {teas.map((tea) => (
+          {filtered.map((tea) => (
             <div
               key={tea.name}
+
               className={`relative rounded-2xl bg-gradient-to-b ${tea.color} border border-white/10 backdrop-blur-md overflow-hidden flex flex-col gap-4 hover:border-white/25 transition-all duration-300 cursor-pointer group`}
             >
               <div className="relative h-44 overflow-hidden">
