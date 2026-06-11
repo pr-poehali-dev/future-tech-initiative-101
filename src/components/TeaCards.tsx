@@ -47,6 +47,50 @@ const teas = [
     price: "750 ₽",
     unit: "50 г",
   },
+  {
+    name: "Пуэр Шу",
+    origin: "Китай, Юньнань",
+    type: "Пуэр",
+    description: "Выдержанный тёмный чай с земляным ароматом, нотами леса и бархатным вкусом.",
+    image: "https://cdn.poehali.dev/projects/91ed680b-5b5f-46c7-90bd-83c4820d3516/files/f3d5bbc4-8d17-4c8c-be22-60e3e44b3582.jpg",
+    color: "from-stone-900/60 to-stone-800/20",
+    badge: "Выдержка",
+    price: "980 ₽",
+    unit: "50 г",
+  },
+  {
+    name: "Тегуаньинь",
+    origin: "Китай, Аньси",
+    type: "Улун",
+    description: "Цветочный улун с нежным орхидейным ароматом и освежающим зелёным послевкусием.",
+    image: "https://cdn.poehali.dev/projects/91ed680b-5b5f-46c7-90bd-83c4820d3516/files/e44508ab-5cde-4c42-ae08-135470b43edd.jpg",
+    color: "from-teal-950/60 to-teal-900/20",
+    badge: null,
+    price: "850 ₽",
+    unit: "50 г",
+  },
+  {
+    name: "Матча церемониальная",
+    origin: "Япония, Нишио",
+    type: "Зелёный",
+    description: "Высший сорт матчи для церемонии. Ярко-зелёный, насыщенный умами, без горечи.",
+    image: "https://cdn.poehali.dev/projects/91ed680b-5b5f-46c7-90bd-83c4820d3516/files/01435e96-2867-489e-b2e6-d954de493dbe.jpg",
+    color: "from-lime-950/60 to-lime-900/20",
+    badge: "Премиум",
+    price: "1 500 ₽",
+    unit: "30 г",
+  },
+  {
+    name: "Серебряные иглы",
+    origin: "Китай, Фуцзянь",
+    type: "Белый",
+    description: "Редчайший белый чай из нераскрытых почек. Мягкий, сладкий, с шелковистой текстурой.",
+    image: "https://cdn.poehali.dev/projects/91ed680b-5b5f-46c7-90bd-83c4820d3516/files/f70706df-1add-4320-8891-860604d5582d.jpg",
+    color: "from-zinc-800/60 to-zinc-700/20",
+    badge: "Редкий",
+    price: "2 100 ₽",
+    unit: "30 г",
+  },
 ]
 
 export default function TeaCards() {
@@ -62,7 +106,7 @@ export default function TeaCards() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4">
           {teas.map((tea) => (
             <div
               key={tea.name}
