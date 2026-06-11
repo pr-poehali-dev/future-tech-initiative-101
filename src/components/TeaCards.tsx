@@ -11,6 +11,8 @@ const teas = [
     image: "https://cdn.poehali.dev/projects/91ed680b-5b5f-46c7-90bd-83c4820d3516/files/911dbb89-2218-417b-9a95-e33c4a053be2.jpg",
     color: "from-amber-950/60 to-amber-900/20",
     badge: "Хит",
+    price: "1 200 ₽",
+    unit: "50 г",
   },
   {
     name: "Гёкуро",
@@ -20,6 +22,8 @@ const teas = [
     image: "https://cdn.poehali.dev/projects/91ed680b-5b5f-46c7-90bd-83c4820d3516/files/6464f5ee-18d5-4aed-b509-186a1f6614f4.jpg",
     color: "from-green-950/60 to-green-900/20",
     badge: "Премиум",
+    price: "1 800 ₽",
+    unit: "50 г",
   },
   {
     name: "Дарджилинг First Flush",
@@ -29,6 +33,8 @@ const teas = [
     image: "https://cdn.poehali.dev/projects/91ed680b-5b5f-46c7-90bd-83c4820d3516/files/0528e3cc-bbb3-4d23-8983-1c67aef69bbe.jpg",
     color: "from-rose-950/60 to-rose-900/20",
     badge: "Новинка",
+    price: "900 ₽",
+    unit: "50 г",
   },
   {
     name: "Белый пион",
@@ -38,6 +44,8 @@ const teas = [
     image: "https://cdn.poehali.dev/projects/91ed680b-5b5f-46c7-90bd-83c4820d3516/files/88a09bd5-2613-45da-8b7f-acd2eea13433.jpg",
     color: "from-slate-800/60 to-slate-700/20",
     badge: null,
+    price: "750 ₽",
+    unit: "50 г",
   },
 ]
 
@@ -85,6 +93,11 @@ export default function TeaCards() {
               </div>
 
               <p className="text-white/60 text-xs leading-relaxed flex-1">{tea.description}</p>
+
+              <div className="flex items-baseline gap-1.5">
+                <span className="text-white text-lg font-medium">{tea.price}</span>
+                <span className="text-white/40 text-xs">/ {tea.unit}</span>
+              </div>
 
               <button
                 onClick={() => setSelectedTea(tea.name)}

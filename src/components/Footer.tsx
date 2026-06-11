@@ -48,6 +48,15 @@ export default function Footer() {
                 <Icon name="Clock" size={12} />
                 Пн–Вс, 9:00 — 21:00
               </p>
+              <a
+                href="https://maps.google.com/?q=ул.+Чайная,+12,+Москва"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/70 text-xs hover:text-white transition-colors duration-200 flex items-start gap-2"
+              >
+                <Icon name="MapPin" size={12} className="mt-0.5 shrink-0" />
+                ул. Чайная, 12, Москва
+              </a>
             </div>
           </div>
         </div>
